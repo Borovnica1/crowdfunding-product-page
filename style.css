@@ -73,11 +73,9 @@ body > header {
 
 main {
   width: 700px;
-  position: absolute;
-  left: 50%;
-  top: 230px;
-  transform: translateX(-50%);
   border-radius: 5px;
+  margin: auto;
+  margin-top: -50px;
 }
 
 menu {
@@ -213,8 +211,149 @@ main > header {
 
 .out-of-stock {
   opacity: .6;
+  user-select: none;
 }
 
 .out-of-stock .btn {
   background-color: rgb(var(--neutral-color-gray));
+}
+
+.modal-overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.301);
+  justify-content: center;
+}
+
+.modal-overlay--active {
+  display: flex;
+}
+
+.modal {
+  display: none;
+  position: relative;
+  margin-top: 100px;
+  width: 60%;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: white;
+  padding: 30px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal > h3 {
+  margin-top: 10px;
+}
+
+.modal > p {
+  margin: 20px 0;
+}
+
+.modal-article > article {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(112, 112, 112, 0.178);
+  cursor: pointer;
+}
+
+.modal-article {
+  margin-bottom: 20px;
+}
+
+.circle-div {
+  width: 90px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 3px;
+  border: 1px solid rgb(var(--primary-color));
+  border-radius: 50%;
+}
+
+.inner-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.modal-article--active .inner-circle  {
+  background-color: rgb(var(--primary-color));
+}
+
+.modal-article__heding {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-article__heding > div * {
+  display: inline-block;
+}
+
+.modal-article__heding > div *:nth-child(2) {
+  margin-left: 10px;
+}
+
+.enter-pledge {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.pledge-amount {
+  width: 30px;
+  border: none;
+  outline: none;
+  margin-left: 5px;
+}
+
+.btn-pledge {
+  margin-right: 10px;
+  color: rgb(var(--neutral-color-gray));
+  border: 1px solid rgb(var(--primary-color));
+  background-color: white;
+}
+
+.modal-article--active {
+  border: 1px solid rgb(var(--primary-color));
+  border-radius: 5px;
+}
+
+.modal-article--active .enter-pledge {
+  display: flex;
+}
+
+.modal-support-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 300px;
+  width: 40%;
+  text-align: center;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: white;
+  padding: 30px;
+}
+
+.modal-support-card > img,
+.modal-support-card > h2,
+.modal-support-card > p {
+  margin-bottom: 20px;
 }
