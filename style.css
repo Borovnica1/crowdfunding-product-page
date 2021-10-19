@@ -21,7 +21,7 @@
   --neutral-color-black: 0, 0, 0;
   --neutral-color-gray: 122, 122, 122;
   --background-color: 248, 248, 248;
-
+--x: #147b74;
   --font-size: 16px
 }
 
@@ -33,6 +33,10 @@ li {
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1,h2,h3,h4 {
@@ -56,6 +60,10 @@ p {
 
 .btn-primary {
   background-color: rgb(var(--primary-color));
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--primary-color-dark));
 }
 
 body {
@@ -130,7 +138,25 @@ main > header {
   color: rgb(var(--neutral-color-gray));
 }
 
-.btn-bookmark > img {
+.btn-bookmark--bookmarked {
+  background-color: rgba(var(--primary-color), .1);
+  color: rgb(var(--primary-color-dark));
+}
+.btn-bookmark--bookmarked:after {
+  content: 'ed';
+}
+.btn-bookmark--bookmarked svg circle {
+  fill: rgb(var(--primary-color-dark));
+}
+.btn-bookmark--bookmarked svg path {
+  fill: white;
+}
+
+.btn-bookmark:hover {
+  opacity: .7;
+}
+
+.btn-bookmark > svg {
   position: absolute;
   left: 0;
   transform: translate(-20%, -35%) scale(.8);
@@ -236,17 +262,34 @@ main > header {
   display: none;
   position: relative;
   margin-top: 100px;
-  width: 60%;
+  width: 600px;
   height: fit-content;
   border-radius: 5px;
   background-color: white;
   padding: 30px;
 }
 
+.modal--active {
+  display: block;
+}
+
 .modal__close {
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(30%, -30%);
+}
+
+
+.modal__close:hover path {
+  opacity: 1;
 }
 
 .modal > h3 {
@@ -268,6 +311,10 @@ main > header {
 
 .modal-article {
   margin-bottom: 20px;
+}
+
+.modal-article:hover h3 {
+  color: rgb(var(--primary-color));
 }
 
 .circle-div {
@@ -315,10 +362,17 @@ main > header {
 }
 
 .pledge-amount {
-  width: 30px;
+  width: 40px;
   border: none;
   outline: none;
   margin-left: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 .btn-pledge {
@@ -338,18 +392,22 @@ main > header {
 }
 
 .modal-support-card {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
   margin-top: 300px;
-  width: 40%;
+  width: 400px;
   text-align: center;
   height: fit-content;
   border-radius: 5px;
   background-color: white;
   padding: 30px;
+}
+
+.modal-support-card--active {
+  display: flex;
 }
 
 .modal-support-card > img,
