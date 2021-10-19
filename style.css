@@ -21,7 +21,7 @@
   --neutral-color-black: 0, 0, 0;
   --neutral-color-gray: 122, 122, 122;
   --background-color: 248, 248, 248;
---x: #147b74;
+
   --font-size: 16px
 }
 
@@ -86,17 +86,23 @@ main {
   margin-top: -50px;
 }
 
-menu {
-  max-width: 1200px;
-  width: 80%;
-  margin: auto;
+header > menu {
   display: flex;
+  margin: auto;
+  width: 80%;
   align-items: center;
   justify-content: space-between;
   padding-top: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-menu * {
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+header > menu * {
   color: white;
 }
 
@@ -116,6 +122,7 @@ main > .about {
 }
 
 main > header {
+  position: relative;
   text-align: center;
 }
 
@@ -414,4 +421,235 @@ input::-webkit-inner-spin-button {
 .modal-support-card > h2,
 .modal-support-card > p {
   margin-bottom: 20px;
+}
+
+
+@media (max-width:720px) {
+  main {
+    width: 600px;
+  }
+}
+
+@media (max-width:620px) {
+  main {
+    width: 500px;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}
+
+@media (max-width:520px) {
+  :root {
+    --font-size: 14px
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: .9em;
+  }
+  h4 {
+    font-size: .8em;
+  }
+  .btn {
+    font-size: .85em;
+  }
+
+  .stats > div > h2:nth-child(2), .stats > div > h2:nth-child(3) {
+    padding-left: 30px;
+  }
+  .stats > div > h2:nth-child(1), .stats > div > h2:nth-child(2) {
+    padding-right: 30px;
+  }
+
+  main {
+    width: 400px;
+  }
+
+  menu {
+    width: 90%;
+  }
+
+  .modal-article__heding > div *:nth-child(2) {
+    margin-left: 0px;
+  }
+
+  li {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width:420px) {
+  main {
+    width: 90%;
+  }
+
+  menu nav,
+  menu .hamburger-close,
+  menu .waterfall {
+    display: none;
+  }
+
+  .menu--active {
+    position: relative;
+  }
+
+  .menu--active img {
+    z-index: 15;
+  }
+
+  .menu--active .waterfall {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.4), rgba(255,255,255,.4));
+    z-index: 10;
+  }
+
+  .menu--active nav {
+    display: none;
+  }
+
+  .menu--active nav {
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    transform: translateY(100%);
+    z-index: 15;
+  }
+
+  .menu--active nav li {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+    background-color: white;
+  }
+
+  .menu--active nav li:nth-child(1) {
+    border-radius: 5px 5px 0 0 ;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.178);
+  }
+  .menu--active nav li:nth-child(3) {
+    border-top: 1px solid rgba(112, 112, 112, 0.178);
+    border-radius: 0 0 5px 5px ;
+  }
+
+  .menu--active nav li a {
+    color: black;
+    font-weight: 500;
+  }
+
+  .menu--active .hamburger-icon {
+    display: none;
+  }
+
+  .menu--active .hamburger-close {
+    display: block;
+  }
+
+  main > header,
+  main > .stats,
+  main > .about {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .modal-article > article {
+    padding: 20px 10px;
+  }
+
+  .circle-div {
+    width: 110px;
+  }
+
+  header p {
+    margin: 10px 0;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .btn-bookmark {
+    padding: 0;
+    margin-right: 10px;
+  }
+
+  .btn-bookmark span {
+    display: none;
+  }
+
+  .btn-bookmark > svg {
+    transform: translate(-50%, -35%) scale(.8);
+  }
+
+  .stats > div {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats > div > h2:not(:nth-last-child(1)) {
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .stats > div > h2:not(:nth-last-child(3)) {
+    padding-top: 20px;
+  }
+
+  .stats > div > h2:not(:nth-last-child(1)):after {
+    content : "";
+    position: absolute;
+    left    : 50%;
+    bottom  : 0;
+    height  : 1px;
+    width   : 30%;  /* or 100px */
+    transform: translateX(-50%);
+    border-bottom:1px solid rgba(var(--neutral-color-gray), .2);
+  }
+
+  .stats > div > h2:nth-child(2), .stats > div > h2:nth-child(3) {
+    padding-left: 0px;
+    border: none;
+  }
+  .stats > div > h2:nth-child(1), .stats > div > h2:nth-child(2) {
+    padding-right: 0px;
+    border: none;
+  }
+
+  .about > article > div {
+    flex-direction: column;
+  }
+
+  .about > article > div .btn {
+    margin-top: 20px;
+  }
+
+  .modal-article--active .enter-pledge {
+    flex-direction: column;
+  }
+  
+  .modal-article--active .enter-pledge .smaller-text {
+    margin-bottom: 20px;
+  }
+
+  .modal-support-card {
+    margin-top: 200px;
+    width: 90%;
+  }
+
+
+  
 }

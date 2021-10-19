@@ -22,13 +22,16 @@
   <body>
 
     <header>
-      <menu>
+      <menu class="">
+        <div class="waterfall"></div>
         <img src="images/logo.svg" alt="Logo image">
         <nav>
           <li><a href="#/">About</a></li>
           <li><a href="#/">Discover</a></li>
           <li><a href="#/">Get Started</a></li>
         </nav>
+        <img class="hamburger-icon" src="images/icon-hamburger.svg" alt="Hamburger icon">
+        <img class="hamburger-close" src="images/icon-close-menu.svg" alt="Hamburger icon">
       </menu>
     </header>
 
@@ -39,7 +42,7 @@
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p> 
         <div class="main-header__btns">
           <button class="btn btn-primary">Back this project</button>
-          <button class="btn btn-bookmark btn-bookmark--bookmarked"><svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>Bookmark</button>
+          <button class="btn btn-bookmark btn-bookmark--bookmarked"><svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg><span>Bookmark</span></button>
         </div>
       </header>
 
@@ -110,7 +113,7 @@
       </div>
     </main>
 
-    <div class="modal-overlay ">
+    <div class="modal-overlay">
       <div class="modal ">
         <div class="modal__close">
           <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z" fill="#000" fill-rule="evenodd" opacity=".4"/></svg>
@@ -228,7 +231,7 @@
         </div>
       </div>
            
-      <div class="modal-support-card ">
+      <div class="modal-support-card">
         <img src="images/icon-check.svg" alt="Check icon">
         <h2>Thanks for your support!</h2>
         <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
