@@ -216,7 +216,7 @@ main > header {
 
 #progressbar>div {
   background-color: rgb(var(--primary-color));
-  width: 70%;
+  width: 30%;
   /* Adjust with JavaScript */
   height: 14px;
   border-radius: 10px;
@@ -565,6 +565,7 @@ input::-webkit-inner-spin-button {
   }
 
   .menu--active .hamburger-close {
+    cursor: pointer;
     display: block;
   }
 

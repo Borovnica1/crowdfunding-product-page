@@ -13,8 +13,14 @@
 
   const statsDollars = document.querySelector('.stats__dollars');
   const statsBackers = document.querySelector('.stats__backers');
+  
+  const menu = document.querySelector('.menu'); 
+  const hamburgerIcon = document.querySelector('.hamburger-icon');
+  const hamburgerClose = document.querySelector('.hamburger-close');
 
-  let moneyBacked = 89914;
+  const progressBar = document.querySelector('#progressbar>div');
+
+  let moneyBacked = 30000;
   let totalBackers = 5007;
 
   var body = document.body,
@@ -62,6 +68,12 @@
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
+  function updateProgressBar(moneyAmount, moneyGoal = 100000) {
+    let moneyWeHaveInPercentage = (moneyAmount / moneyGoal).toFixed(2) * 100;
+    if (moneyWeHaveInPercentage > 100) moneyWeHaveInPercentage = 100;
+    progressBar.style.width = `${moneyWeHaveInPercentage}%`;
+  }
+
   function congratulateUserForPledging() {
     const pledgeIndex = this.parentElement.parentElement.parentElement.dataset['id'];
     const pledgeAmount = Number(this.parentElement.parentElement.parentElement.querySelector('.pledge-amount') ? this.parentElement.parentElement.parentElement.querySelector('.pledge-amount').value : 0 || 0);
@@ -76,12 +88,19 @@
     moneyBacked += pledgeAmount;
     totalBackers++;
 
+    updateProgressBar(moneyBacked);
+
     statsDollars.textContent = `$${numberWithCommas(moneyBacked)}`;
     statsBackers.textContent = totalBackers;
 
     modal.classList.remove('modal--active');
     congratsCard.classList.add('modal-support-card--active');
-  }
+  };
+
+
+  function toggleMobileMenu() {
+    menu.classList.toggle('menu--active');
+  };
 
 
   btnBookmark.addEventListener('click', () => {
@@ -106,5 +125,8 @@
     btn.addEventListener('click', congratulateUserForPledging);
   };
 
-  btnFinishPledge.addEventListener('click', closeModal)
+  btnFinishPledge.addEventListener('click', closeModal);
+
+  hamburgerIcon.addEventListener('click', toggleMobileMenu);
+  hamburgerClose.addEventListener('click', toggleMobileMenu);
 })();
