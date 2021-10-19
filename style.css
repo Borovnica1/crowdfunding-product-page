@@ -106,6 +106,10 @@ header > menu * {
   color: white;
 }
 
+menu .hamburger-close,
+menu .waterfall {
+  display: none;
+}
 
 
 main > header,
@@ -114,6 +118,10 @@ main > .about {
   background-color: rgb(255, 255, 255);
   padding: 40px;
   border-radius: 5px;
+}
+
+main > .stats span {
+  font-weight: 700;
 }
 
 main > .stats,
@@ -143,6 +151,10 @@ main > header {
   position: relative;
   padding-left: 3rem;
   color: rgb(var(--neutral-color-gray));
+}
+
+.btn-bookmark span {
+  font-weight: 700;
 }
 
 .btn-bookmark--bookmarked {
@@ -438,6 +450,10 @@ input::-webkit-inner-spin-button {
   .modal {
     width: 90%;
   }
+
+  menu {
+    width: 90%;
+  }
 }
 
 @media (max-width:520px) {
@@ -468,9 +484,6 @@ input::-webkit-inner-spin-button {
     width: 400px;
   }
 
-  menu {
-    width: 90%;
-  }
 
   .modal-article__heding > div *:nth-child(2) {
     margin-left: 0px;
@@ -479,6 +492,7 @@ input::-webkit-inner-spin-button {
   li {
     margin-left: 5px;
   }
+  
 }
 
 @media (max-width:420px) {
@@ -592,7 +606,11 @@ input::-webkit-inner-spin-button {
   }
 
   .btn-bookmark > svg {
-    transform: translate(-50%, -35%) scale(.8);
+    transform: translate(-70%, -50%) scale(.8);
+  }
+
+  .btn-bookmark--bookmarked:after {
+    content: '';
   }
 
   .stats > div {

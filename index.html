@@ -41,21 +41,21 @@
         <h2>Mastercraft Bamboo Monitor Riser</h2>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p> 
         <div class="main-header__btns">
-          <button class="btn btn-primary">Back this project</button>
-          <button class="btn btn-bookmark btn-bookmark--bookmarked"><svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg><span>Bookmark</span></button>
+          <button class="btn btn-primary btn-back-project" data-id='0'>Back this project</button>
+          <button class="btn btn-bookmark"><svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg><span>Bookmark</span></button>
         </div>
       </header>
 
       <div class="stats">
         <div>
-          <h2 class="stats__dollars">
-            $89,914 <span class="smaller-text">of $100,000 backed</span>
+          <h2>
+            <span class="stats__dollars">$89,914</span><span class="smaller-text">of $100,000 backed</span>
           </h2>
-          <h2 class="stats__dollars">
-            5,007 <span class="smaller-text">total backers</span>
+          <h2>
+            <span class="stats__backers">5007</span><span class="smaller-text">total backers</span>
           </h2>
-          <h2 class="stats__dollars">
-            56 <span class="smaller-text">days left</span>
+          <h2>
+            <span class="stats__days">56</span><span class="smaller-text">days left</span>
           </h2>
         </div>
         <div id="progressbar">
@@ -81,12 +81,12 @@
             <h2>
               101 <span class="smaller-text">left</span>
             </h2>
-            <button class="btn btn-primary">Select Reward</button>
+            <button class="btn btn-primary btn-back-project" data-id="1">Select Reward</button>
           </div>
         </article>
         <article>
           <div>
-            <h3>Bamboo Stand</h3>
+            <h3>Black Special Edition</h3>
             <span class="blue-text">Pledge $25 or more</span>
           </div>
           <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
@@ -94,7 +94,7 @@
             <h2>
               64 <span class="smaller-text">left</span>
             </h2>
-            <button class="btn btn-primary">Select Reward</button>
+            <button class="btn btn-primary btn-back-project" data-id="2">Select Reward</button>
           </div>
         </article>
         <article class="out-of-stock">
@@ -107,7 +107,7 @@
             <h2>
               0 <span class="smaller-text">left</span>
             </h2>
-            <button class="btn btn-primary">Out of Stock</button>
+            <button class="btn btn-primary btn-back-project" data-id="3">Out of Stock</button>
           </div>
         </article>
       </div>
@@ -124,7 +124,7 @@
           Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
         </p>
 
-        <div class="modal-article">
+        <div class="modal-article" data-id="0">
           <article>
             <div class="circle-div">
               <div class="circle">
@@ -138,9 +138,15 @@
               <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email</p>
             </div>
           </article>
+
+          <div class="enter-pledge">
+            <div>
+              <button class="btn btn-primary btn-pledge-continue">Continue</button>
+            </div>
+          </div>
         </div>
 
-        <div class="modal-article">
+        <div class="modal-article" data-id="1">
           <article>
             <div class="circle-div">
               <div class="circle">
@@ -164,13 +170,13 @@
           <div class="enter-pledge">
             <span class="smaller-text">Enter your pledge</span>
             <div>
-              <button class="btn btn-pledge">$<input class="pledge-amount" type="number" name="pledge-amount" id="pledge-amount" ></button>
-              <button class="btn btn-primary">Continue</button>
+              <button class="btn btn-pledge">$<input class="pledge-amount" type="number" name="pledge-amount" id="pledge-amount" min="25"></button>
+              <button class="btn btn-primary btn-pledge-continue">Continue</button>
             </div>
           </div>
         </div>
 
-        <div class="modal-article modal-article--active">
+        <div class="modal-article" data-id="2">
           <article>
             <div class="circle-div">
               <div class="circle">
@@ -194,13 +200,13 @@
           <div class="enter-pledge">
             <span class="smaller-text">Enter your pledge</span>
             <div>
-              <button class="btn btn-pledge">$<input class="pledge-amount" type="number" name="pledge-amount" id="pledge-amount" ></button>
-              <button class="btn btn-primary">Continue</button>
+              <button class="btn btn-pledge">$<input class="pledge-amount" type="number" name="pledge-amount" id="pledge-amount" min="75"></button>
+              <button class="btn btn-primary btn-pledge-continue">Continue</button>
             </div>
           </div>
         </div>
 
-        <div class="modal-article out-of-stock">
+        <div class="modal-article out-of-stock" data-id="3">
           <article>
             <div class="circle-div">
               <div class="circle">
@@ -225,7 +231,7 @@
             <span class="smaller-text">Enter your pledge</span>
             <div>
               <button class="btn btn-pledge">$<input class="pledge-amount" type="number" name="pledge-amount" id="pledge-amount" ></button>
-              <button class="btn btn-primary">Continue</button>
+              <button class="btn btn-primary btn-pledge-continue">Continue</button>
             </div>
           </div>
         </div>
@@ -235,15 +241,10 @@
         <img src="images/icon-check.svg" alt="Check icon">
         <h2>Thanks for your support!</h2>
         <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
-        <button class="btn btn-primary">Got it!</button>
+        <button class="btn btn-primary btn-finish-pledge">Got it!</button>
       </div>
     </div>
 
-
-
-
-
-
-       
+    <script src="script.js"></script>
   </body>
 </html>
